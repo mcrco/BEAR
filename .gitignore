@@ -1,1 +1,10 @@
-benchmark/*/data
+datasets/*/frames
+datasets/MPII-Cooking/annotations
+datasets/MPII-Cooking/raw_frames
+datasets/MPII-Cooking/videos
+datasets/MPII-Cooking/videos.zip
+datasets/MPII-Cooking/mpi_cooking.csv
+datasets/MPII-Cooking/segment-specific.py
+datasets/MPII-Cooking/labels.csv
+datasets/ToyotaSmarthome/data
+datasets/ToyotaSmarthome/mp4
