@@ -19,4 +19,5 @@ class WandbHook(Hook):
     def after_val_epoch(self, runner):
         log_dict = {'val_loss': runner.outputs['loss']}
         log_dict.update(runner.outputs['log_vars'])
+        print('wandb log', log_dict)
         wandb.log(log_dict)
