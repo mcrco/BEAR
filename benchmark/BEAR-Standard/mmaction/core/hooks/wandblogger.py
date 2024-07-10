@@ -12,12 +12,11 @@ class WandbHook(Hook):
             Default: 50.
     """
 
-    def __init__(self, interval=50, name='mpii-tsh', project='tadvar', group='marco'):
+    def __init__(self, interval=1, name='mpii-tsh', project='tadvar', group='marco'):
         self.interval = interval
         wandb.init(name=name, project=project, group=group)
 
     def after_val_epoch(self, runner):
         log_dict = {'val_loss': runner.outputs['loss']}
         log_dict.update(runner.outputs['log_vars'])
-        print('wandb log', log_dict)
         wandb.log(log_dict)

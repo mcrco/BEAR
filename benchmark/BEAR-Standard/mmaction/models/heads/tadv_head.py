@@ -1,6 +1,5 @@
 import torch
 import torch.nn as nn
-from mmcv.cnn import normal_init
 
 from ..builder import HEADS
 from .base import BaseHead
@@ -35,4 +34,5 @@ class LinearHead(BaseHead):
         x = self.flatten(x)
         x = self.cls_head(x)
         return x
+
 
