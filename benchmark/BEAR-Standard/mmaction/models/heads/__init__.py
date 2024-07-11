@@ -14,11 +14,11 @@ from .tsm_head import TSMHead
 from .tsn_head import TSNHead
 from .x3d_head import X3DHead
 from .timesformer_head import TimeSformerHead
-from .linear_head import LinearHead
+from .tadv_heads import LinearHeadMM, NeeharHeadMM
 
 __all__ = [
     'TSNHead', 'I3DHead', 'BaseHead', 'TSMHead', 'SlowFastHead', 'SSNHead',
     'TPNHead', 'AudioTSNHead', 'X3DHead', 'BBoxHeadAVA', 'AVARoIHead',
     'FBOHead', 'LFBInferHead', 'TRNHead', 'ACRNHead', 'TimeSformerHead', 
-    'LinearHead'
+    'LinearHeadMM', 'NeeharHeadMM'
 ]

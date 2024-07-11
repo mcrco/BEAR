@@ -11,7 +11,8 @@ from .common import (LFB, TAM, Conv2plus1d, ConvAudio,
                      DividedSpatialAttentionWithNorm, DividedTemporalAttentionWithNorm, FFNWithNorm)
 from .heads import (ACRNHead, AudioTSNHead, AVARoIHead, BaseHead, BBoxHeadAVA,
                     FBOHead, I3DHead, LFBInferHead, SlowFastHead, TPNHead,
-                    TRNHead, TSMHead, TSNHead, X3DHead, TimeSformerHead)
+                    TRNHead, TSMHead, TSNHead, X3DHead, TimeSformerHead, 
+                    LinearHeadMM, NeeharHeadMM)
 from .localizers import BMN, PEM, TEM
 from .losses import (BCELossWithLogits, BinaryLogisticRegressionLoss, BMNLoss,
                      CrossEntropyLoss, HVULoss, NLLLoss, OHEMHingeLoss,
@@ -37,5 +38,6 @@ __all__ = [
     'FBOHead', 'LFBInferHead', 'TRNHead', 'NECKS', 'ACRNHead', 'ConvNeXt', 
     'TimeSformer', 'TimeSformerHead', 'DividedSpatialAttentionWithNorm',
     'DividedTemporalAttentionWithNorm', 'FFNWithNorm', 'ConvNeXtTSM', 'ConvNeXt3D',
-    'ConvNeXt3dSlowFast', 'ConvNeXt3DNonLocal', 'NewTimeSformer', 'VideoMAE', 'TADPVidMM'
+    'ConvNeXt3dSlowFast', 'ConvNeXt3DNonLocal', 'NewTimeSformer', 'VideoMAE', 'TADPVidMM',
+    'LinearHeadMM', 'NeeharHeadMM'
 ]
