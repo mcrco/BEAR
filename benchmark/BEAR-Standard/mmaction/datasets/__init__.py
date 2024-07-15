@@ -13,6 +13,7 @@ from .hvu_dataset import HVUDataset
 from .image_dataset import ImageDataset
 from .pose_dataset import PoseDataset
 from .rawframe_dataset import RawframeDataset
+from .rawframe_meta_dataset import RawframeWithMetaDataset
 from .rawvideo_dataset import RawVideoDataset
 from .ssn_dataset import SSNDataset
 from .video_dataset import VideoDataset
@@ -23,5 +24,5 @@ __all__ = [
     'HVUDataset', 'AudioDataset', 'AudioFeatureDataset', 'ImageDataset',
     'RawVideoDataset', 'AVADataset', 'AudioVisualDataset',
     'BaseMiniBatchBlending', 'CutmixBlending', 'MixupBlending', 'LabelSmoothing', 'DATASETS',
-    'PIPELINES', 'BLENDINGS', 'PoseDataset'
+    'PIPELINES', 'BLENDINGS', 'PoseDataset', 'RawframeWithMetaDataset'
 ]

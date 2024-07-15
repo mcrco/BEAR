@@ -6,7 +6,7 @@ model = dict(
     cls_head=dict(
         type='LinearHead'),
     # model training and testing settings
-    train_cfg=None,
+    train_cfg=dict(),
     test_cfg=dict(average_clips='prob'))
 
 # This setting refers to https://github.com/open-mmlab/mmaction/blob/master/mmaction/models/tenons/backbones/resnet_i3d.py#L329-L332  # noqa: E501

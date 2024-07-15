@@ -6,8 +6,9 @@ class TADPVidMM(TADPVid):
     def __init__(self, cfg, class_names):
         super().__init__(cfg=cfg, use_decode_head=False, class_names=class_names)
 
-    def forward(self, x):
-        return super().forward(x, img_metas=None)
+    def forward(self, x, img_metas=None):
+        print(img_metas)
+        return super().forward(x, img_metas=img_metas)
 
     def init_weights(self):
         pass
