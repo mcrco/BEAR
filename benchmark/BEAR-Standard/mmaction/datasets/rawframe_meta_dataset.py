@@ -6,7 +6,6 @@ import torch
 from .base import BaseDataset
 from .builder import DATASETS
 
-
 @DATASETS.register_module()
 class RawframeWithMetaDataset(BaseDataset):
     """Rawframe dataset for action recognition.
@@ -166,7 +165,7 @@ class RawframeWithMetaDataset(BaseDataset):
             results['label'] = onehot
 
         ret = self.pipeline(results)
-        ret['video_name'] = results['frame_dir']
+        ret['video_name'] = osp.basename(osp.normpath(results['frame_dir']))
         return ret
 
     def prepare_test_frames(self, idx):
