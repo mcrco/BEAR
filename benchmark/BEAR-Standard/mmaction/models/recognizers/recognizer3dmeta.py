@@ -47,7 +47,7 @@ class Recognizer3DMeta(BaseRecognizer):
 
         return losses
 
-    def _do_test(self, imgs):
+    def _do_test(self, imgs, metas):
         """Defines the computation performed at every call when evaluation,
         testing and gradcam."""
         batches = imgs.shape[0]
@@ -63,7 +63,7 @@ class Recognizer3DMeta(BaseRecognizer):
             feats = []
             while view_ptr < total_views:
                 batch_imgs = imgs[view_ptr:view_ptr + self.max_testing_views]
-                x = self.extract_feat(batch_imgs)
+                x = self.extract_feat(batch_imgs, metas)
                 if self.with_neck:
                     x, _ = self.neck(x)
                 feats.append(x)
@@ -103,10 +103,11 @@ class Recognizer3DMeta(BaseRecognizer):
         cls_score = self.average_clip(cls_score, num_segs)
         return cls_score
 
-    def forward_test(self, imgs):
+    def forward_test(self, imgs, **kwargs):
         """Defines the computation performed at every call when evaluation and
         testing."""
-        return self._do_test(imgs).cpu().numpy()
+        print(kwargs['video_name'])
+        return self._do_test(imgs, kwargs['video_name']).cpu().numpy()
 
     def forward_dummy(self, imgs, softmax=False):
         """Used for computing network FLOPs.
@@ -121,7 +122,7 @@ class Recognizer3DMeta(BaseRecognizer):
         """
         assert self.with_cls_head
         imgs = imgs.reshape((-1, ) + imgs.shape[2:])
-        x = self.extract_feat(imgs)
+        x = self.extract_feat(imgs, None)
 
         if self.with_neck:
             x, _ = self.neck(x)
